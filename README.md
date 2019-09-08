@@ -1,9 +1,11 @@
 # Wi-Fi Position Tracker
 This is the initial version of a position tracking software based on Wi-Fi.
 
+See the minimal proof of concept [here](src/Device_proximity_parser.ipynb).
+
 ## How to capture packets
 ### Raspberry Pi 3B
-Download the "Kali Linux RaspberryPi 2 (v1.2), 3 and 4 64-Bit" from [here](offensive-security.com/kali-linux-arm-images/).
+Download the "Kali Linux RaspberryPi 2 (v1.2), 3 and 4 64-Bit" from [here](https://offensive-security.com/kali-linux-arm-images/).
 
 After flashing it to a SDCard and booting it in your Raspberry Pi 3B, run:
 
