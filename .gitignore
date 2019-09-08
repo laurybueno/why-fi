@@ -1,0 +1,10 @@
+.cache
+.ipy*
+.jupyter
+.local
+.config
+.bash_history
+*.cap
+*.pcap
+*.pyc
+!src/captured_packets/.gitkeep
