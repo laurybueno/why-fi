@@ -9,3 +9,4 @@
 *.pyc
 !src/captured_packets/.gitkeep
 Experiments*
+*.csv
