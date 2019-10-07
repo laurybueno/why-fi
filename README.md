@@ -1,7 +1,7 @@
 # Wi-Fi Position Tracker
 This is the initial version of a position tracking software based on Wi-Fi.
 
-See the minimal proof of concept [here](src/Device_proximity_parser.ipynb).
+See the minimal proof of concept [here](lab/Device_proximity_parser.ipynb).
 
 ## How to capture packets
 ### Raspberry Pi 3B
