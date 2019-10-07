@@ -30,5 +30,9 @@ def parse_rssi(packet):
         offset += 4
     if bits[4] == 1:
         offset += 2
-    dbm_antsignal, = struct.unpack_from('<b', packet, offset)
+    # Use a try except block to avoid errors when there are no bytes on the expected pointer
+    try:
+        dbm_antsignal, = struct.unpack_from('<b', packet, offset)
+    except:
+        return None
     return dbm_antsignal

@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ./src:/home/jovyan
+      - ./lab:/home/jovyan
     network_mode: "host"
     environment:
       - JUPYTER_ENABLE_LAB=yes
