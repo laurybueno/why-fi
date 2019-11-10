@@ -4,9 +4,9 @@ services:
   jupyter:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./compose/Dockerfile
     volumes:
-      - ./lab:/home/jovyan
+      - .:/home/jovyan
     network_mode: "host"
     environment:
       - JUPYTER_ENABLE_LAB=yes
