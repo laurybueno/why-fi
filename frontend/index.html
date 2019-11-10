@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+        <div id="bezier-demo"></div>
+
+        <script type="text/javascript">
+            d3.csv('movements.csv').then(function(data){
+                var dataLinks = [];
+                data.forEach(function(d) {
+                    d.time = new Date(d.time);
+                    dataLinks.push({
+                        source: d.origin,
+                        target: d.destination
+                    });
+                });
+                console.log(dataLinks);
+
+                const width = 920;
+                const height = 700;
+                const margin = {top: 20, bottom: 20, left: 30, right: 20};
+                const innerWidth = width - margin.left - margin.right;
+                const innerHeight = height - margin.top - margin.bottom;
+
+                var stations_ids = d3.map(data, d => d.origin).keys();
+
+                // var stations = [];
+                // stations_ids.forEach((s, i) => {
+                //     stations[i] = {
+                //         id: stations_ids[i]
+                //     };
+                // });
+                // console.log(stations);
+
+                // Determine positions for each station
+                var stations = [];
+                stations[0] = {
+                    id: stations_ids[0],
+                    x: innerWidth/2,
+                    y: innerHeight - (innerHeight/3)
+                };
+
+                stations[1] = {
+                    id: stations_ids[1],
+                    x: innerWidth/3,
+                    y: innerHeight - (innerHeight/3)*2
+                };
+
+                stations[2] = {
+                    id: stations_ids[2],
+                    x: innerWidth*2/3,
+                    y: innerHeight - (innerHeight/3)*2
+                };
+                console.log(stations);
+
+                const svg = d3.select('body')
+                    .append('svg')
+                    .attr('width', width)
+                    .attr('height', height);
+
+                // Initialize the links
+                var link = svg
+                    .selectAll("path")
+                    .data(dataLinks)
+                    .enter()
+                    .append("path")
+                    .style("stroke", "#aaa")
+                    .style("fill", "none");
+
+                // Initialize the nodes
+                var node = svg
+                    .selectAll("circle")
+                    .data(stations)
+                    .enter()
+                    .append("circle")
+                    .attr("r", 20)
+                    .style("fill", "#69b3a2")
+
+                var simulation = d3.forceSimulation(stations)
+                    .force("link", d3.forceLink(dataLinks)
+                        .distance(10)
+                        .strength(0)
+                        .id(d => d.id)
+                        .links(dataLinks)
+                    )
+                    .force("charge", d3.forceManyBody().strength(0))
+                    .force("center", d3.forceCenter(width / 2, height / 2))
+                    .on("end", ticked);
+
+                // This function is run at each iteration of the force algorithm, updating the nodes position
+                function ticked() {
+                    link
+                        .attr("d", linkArc);
+
+                    node
+                        .attr("cx", function (d) { return d.x+6; })
+                        .attr("cy", function(d) { return d.y-6; })
+                        .attr("id", d => d.id);
+                }
+
+                function linkArc(d) {
+                    var dx = d.target.x - d.source.x,
+                        dy = d.target.y - d.source.y,
+                        dr = Math.sqrt((dx * dx + dy * dy) * Math.random());
+                    return "M" + d.source.x + " " + d.source.y + "A" + dr + " " + dr + " 0 0,1 " + d.target.x + " " + d.target.y;
+                }
+
+
+            });
+
+        </script>
+    </body>
+</html>
