@@ -2,7 +2,9 @@
 
 This is a position tracking software based on wi-fi signals. It's alpha quality software, meaning it's not fancy or smooth by any means. If you intend to use this, be prepared to get yout hands dirty.
 
-You can take a look at the original proof of concept [here](lab/Device_proximity_parser.ipynb). It's a simple Python code that takes wi-fi packets and extracts RSSI data (signal strength) from each one. Everything else on this project builds up on top of the following premise: if we can measure the signal strength of a device in relation to a receiver, we can map its position over time.
+I've presented this work at the Mozilla Festival 2019 in London. If you're looking for the slides, [download them here](https://laury.me/talks/mozfest2019/why-fi.pdf).
+
+You can also take a look at the original proof of concept [here](lab/Device_proximity_parser.ipynb). It's a simple Python code that takes wi-fi packets and extracts RSSI data (signal strength) from each one. Everything else on this project builds up on top of the following premise: if we can measure the signal strength of a device in relation to a receiver, we can map its position over time.
 
 # How to use this project
 The work will involve three steps:
