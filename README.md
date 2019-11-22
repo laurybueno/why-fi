@@ -20,7 +20,7 @@ To do this, you need to have a working knowledge of:
 - Docker (not required, but recommended)
 
 ## How to capture packets
-Until now, I have used Raspberry Pi 3B with great results. Certainly, you can use other Raspberry Pi models, or even completely different hardware for this step. All you realy need is a hardware capable of running [airodump-ng](https://tools.kali.org/wireless-attacks/airodump-ng).
+Until now, I have used Raspberry Pi 3B with great results. Certainly, you can use other Raspberry Pi models, or even completely different hardware for this step. All you really need is a device capable of running [airodump-ng](https://tools.kali.org/wireless-attacks/airodump-ng).
 
 ### Raspberry Pi 3B
 There is a [helper script](https://github.com/laurybueno/why-fi/blob/master/scripts/packet_collect.sh) that you can use to ease the data collection process. In essence, its just a way to juggle `airodump-ng` functionality and the regular wi-fi functionality. You won't need it if you can connect to the Pi using an ethernet cable or keyboard/screen during the data gathering process.
