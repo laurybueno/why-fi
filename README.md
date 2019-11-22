@@ -1,6 +1,6 @@
 # why-fi
 
-This is a position tracking software based on wi-fi signals. It's alpha quality software, meaning it's not fancy or smooth by any means. If you intend to use this, be prepared to get yout hands dirty.
+This is a position tracking software based on wi-fi signals. It's alpha quality, meaning it's not fancy or smooth by any means. If you intend to use this, be prepared to get yout hands dirty.
 
 I've presented this work at the Mozilla Festival 2019 in London. If you're looking for the slides, [download them here](https://laury.me/talks/mozfest2019/why-fi.pdf).
 
@@ -12,7 +12,7 @@ The work will involve three steps:
 2. [filter and process the data to turn it into a table of movements](#process-the-packets)
 3. [visualize the movements in a web browser](#visualize-the-data)
 
-To do this, you need to heave a working knowledge of:
+To do this, you need to have a working knowledge of:
 - Linux
 - SSH
 - Python/Jupyter
