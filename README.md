@@ -2,9 +2,16 @@
 
 This is a position tracking software based on wi-fi signals. It's alpha quality, meaning it's not fancy or smooth by any means. If you intend to use this, be prepared to get your hands dirty.
 
-I've presented this work at the Mozilla Festival 2019 in London. If you're looking for the slides, [download them here](https://laury.me/talks/mozfest2019/why-fi.pdf).
-
 You can also take a look at the original proof of concept [here](lab/Device_proximity_parser.ipynb). It's a simple Python code that takes wi-fi packets and extracts RSSI data (signal strength) from each one. Everything else on this project builds up on top of the following premise: if we can measure the signal strength of a device in relation to a receiver, we can map its position over time.
+
+# Why I've done this?
+This project shows how easy it is to track people's movements without their consent using their own smartphones.
+
+The constant search for a Wi-Fi turn our phones into beacons signaling where we are, who we are and even where we have been. With that, it's possible to create a map of people's movements by collecting data in large scale.
+
+Despite looking like a complex endeavour, doing something like this is fairly simple, so I created an open source version of such tracking system to **show that any small organization (a shopping center, for instance) can track us** and, with this, bring awareness to this issue.
+
+I have presented this work at the Mozilla Festival, in London, in 2019. You can get the slides [here](https://laury.me/talks/mozfest2019/why-fi.pdf).
 
 # How to use this project
 The work will involve three steps:
