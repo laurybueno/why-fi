@@ -4,7 +4,7 @@ This is a position tracking software based on wi-fi signals. It's alpha quality,
 
 You can also take a look at the original proof of concept [here](lab/Device_proximity_parser.ipynb). It's a simple Python code that takes wi-fi packets and extracts RSSI data (signal strength) from each one. Everything else on this project builds up on top of the following premise: if we can measure the signal strength of a device in relation to a receiver, we can map its position over time.
 
-# Why I've done this?
+# Why have I done this?
 This project shows how easy it is to track people's movements without their consent using their own smartphones.
 
 The constant search for a Wi-Fi turn our phones into beacons signaling where we are, who we are and even where we have been. With that, it's possible to create a map of people's movements by collecting data in large scale.
